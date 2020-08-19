@@ -20,6 +20,7 @@
 
 (column-number-mode)                ;; Display the column number in the mode line.
 (show-paren-mode)                   ;; Hilight matching parenthesis.
+(save-place-mode)                   ;; Restore point to its previous location when visiting a file.
 
 ;; Perform macOS specific customisations.
 (when (eq system-type 'darwin)
