@@ -31,5 +31,9 @@
 ;; Configure the backup system.
 (setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backup"))))
 
+;; Configure Ido Mode.
+(ido-mode 1)                        ;; Enable Ido Mode.
+(setq ido-enable-flex-matching t)   ;; Enable flexible matching.
+
 ;; Configure the global key bindings.
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
