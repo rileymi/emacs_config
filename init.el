@@ -24,9 +24,9 @@
 
 ;; Perform macOS specific customisations.
 (when (eq system-type 'darwin)
-   (setq ns-command-modifier 'meta)
-   (setq ns-alternate-modifier 'none)
-   (set-frame-font "-*-Courier New-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1"))
+  (setq ns-command-modifier 'meta)
+  (setq ns-alternate-modifier 'none)
+  (set-frame-font "-*-Courier New-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1"))
 
 ;; Configure the backup system.
 (setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backup"))))
@@ -34,6 +34,13 @@
 ;; Configure Ido Mode.
 (ido-mode 1)                        ;; Enable Ido Mode.
 (setq ido-enable-flex-matching t)   ;; Enable flexible matching.
+
+;; Configure Emacs Lisp mode.
+(defun my-emacs-lisp-mode-hook ()
+  (linum-mode)
+  (setq truncate-lines t))
+
+(add-hook 'emacs-lisp-mode-hook 'my-emacs-lisp-mode-hook)
 
 ;; Configure the global key bindings.
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
