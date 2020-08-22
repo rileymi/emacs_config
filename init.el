@@ -31,6 +31,12 @@
 ;; Configure the backup system.
 (setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backup"))))
 
+;; Configure CC Mode.
+(defun my-c++-mode-hook ()
+  (linum-mode))
+
+(add-hook 'c++-mode-hook 'my-c++-mode-hook)
+
 ;; Configure Ido Mode.
 (ido-mode 1)                        ;; Enable Ido Mode.
 (setq ido-enable-flex-matching t)   ;; Enable flexible matching.
