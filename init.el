@@ -5,6 +5,7 @@
 (setq inhibit-startup-screen t)     ;; Don't display the startup screen.
 (setq initial-scratch-message nil)  ;; Don't display a message in the scratch buffer.
 (setq ring-bell-function 'ignore)   ;; Silence is bliss.
+(setq linum-format "%3d ")          ;; Set format for line numbers.
 
 (setq-default indent-tabs-mode nil) ;; Use spaces not tabs.
 
@@ -15,6 +16,9 @@
 
 (if (fboundp 'tool-bar-mode)        ;; Disable the tool bar.
     (tool-bar-mode -1))
+
+(if (fboundp 'set-fringe-mode)      ;; No left fringe, default width for right fringe.
+    (set-fringe-mode '(0 . nil)))
 
 (menu-bar-mode -1)                  ;; Disable the menu bar.
 
