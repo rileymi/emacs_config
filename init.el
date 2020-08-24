@@ -27,6 +27,8 @@
 (save-place-mode)                   ;; Restore point to its previous location when visiting a file.
 (recentf-mode)                      ;; Enable Recentf Mode.
 
+(require 'dired-x)                  ;; Needed to make the C-x C-j binding to dired-jump available.
+
 ;; Perform macOS specific customisations.
 (when (eq system-type 'darwin)
   (setq ns-command-modifier 'meta)
