@@ -40,6 +40,7 @@
 
 ;; Configure CC Mode.
 (defun my-c++-mode-hook ()
+  (setq c-basic-offset 4)
   (linum-mode))
 
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
