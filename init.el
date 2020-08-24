@@ -25,6 +25,7 @@
 (column-number-mode)                ;; Display the column number in the mode line.
 (show-paren-mode)                   ;; Hilight matching parenthesis.
 (save-place-mode)                   ;; Restore point to its previous location when visiting a file.
+(recentf-mode)                      ;; Enable Recentf Mode.
 
 ;; Perform macOS specific customisations.
 (when (eq system-type 'darwin)
@@ -52,5 +53,13 @@
 
 (add-hook 'emacs-lisp-mode-hook 'my-emacs-lisp-mode-hook)
 
+;; Custom functions.
+(defun mdr-find-recent-file ()
+  "Find a recently visited file."
+  (interactive)
+  (let ((file-name (ido-completing-read "Find recent file: " recentf-list)))
+    (find-file file-name)))
+
 ;; Configure the global key bindings.
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
+(global-set-key (kbd "C-x C-r") 'mdr-find-recent-file)
