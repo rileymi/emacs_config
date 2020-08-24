@@ -6,6 +6,7 @@
 (setq initial-scratch-message nil)  ;; Don't display a message in the scratch buffer.
 (setq ring-bell-function 'ignore)   ;; Silence is bliss.
 (setq linum-format "%3d ")          ;; Set format for line numbers.
+(setq resize-mini-windows t)        ;; Dynamically resize the minibuffer to fit the text currently displayed.
 
 (setq-default indent-tabs-mode nil) ;; Use spaces not tabs.
 
