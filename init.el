@@ -9,6 +9,7 @@
 (setq resize-mini-windows t)        ;; Dynamically resize the minibuffer to fit the text currently displayed.
 
 (setq-default indent-tabs-mode nil) ;; Use spaces not tabs.
+(setq-default fill-column 155)      ;; Break the line at column 155 when using Auto Fill mode.
 
 (load-theme 'wombat)
 
@@ -56,6 +57,12 @@
   (setq truncate-lines t))
 
 (add-hook 'emacs-lisp-mode-hook 'my-emacs-lisp-mode-hook)
+
+;; Configure Org mode.
+(defun my-org-mode-hook ()
+  (auto-fill-mode))
+
+(add-hook 'org-mode-hook 'my-org-mode-hook)
 
 ;; Custom functions.
 (defun mdr-find-recent-file ()
