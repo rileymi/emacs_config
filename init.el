@@ -58,6 +58,13 @@
 
 (add-hook 'emacs-lisp-mode-hook 'my-emacs-lisp-mode-hook)
 
+;; Configure Octave mode.
+(defun my-octave-mode-hook ()
+  (linum-mode)
+  (setq truncate-lines t))
+
+(add-hook 'octave-mode-hook 'my-octave-mode-hook)
+
 ;; Configure Org mode.
 (defun my-org-mode-hook ()
   (auto-fill-mode))
